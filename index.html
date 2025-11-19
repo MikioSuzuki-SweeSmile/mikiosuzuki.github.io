@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teichm?ller-based p-adic Cryptography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Teichm?ller-based p-adic cryptography: a new mathematical framework for structural quantum resistance."
+  />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f7f7f9;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: radial-gradient(circle at top left, #1f4b99, #0a1630);
+      color: #fff;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.3rem;
+      font-weight: 700;
+    }
+
+    header p.subtitle {
+      margin: 0.25rem 0 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    header p.meta {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: #c9d8ff;
+      text-decoration: none;
+      margin-right: 1.5rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      background-color: #f7f7f9;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      padding: 1.75rem 1.75rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      border-left: 4px solid #1f4b99;
+      padding-left: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0.35rem 0 0.35rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.4rem 0 0.4rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+      background: #f0f0f5;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .pill {
+      display: inline-block;
+      background: #e5ecff;
+      color: #1f4b99;
+      border-radius: 999px;
+      padding: 0.15rem 0.75rem;
+      font-size: 0.8rem;
+      margin-right: 0.4rem;
+      margin-top: 0.2rem;
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    a {
+      color: #1f4b99;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      section {
+        padding: 1.4rem 1.25rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Teichm?ller-based p-adic Cryptography</h1>
+      <p class="subtitle">
+        A New Mathematical Framework for Structural Quantum Resistance
+      </p>
+      <p class="meta">
+        Research Project by <strong>Mikio Suzuki</strong> (Japan)
+      </p>
+      <p class="meta">
+        Submitted to: <strong>SCIS2026 ? Symposium on Cryptography and
+        Information Security</strong>
+      </p>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#key-contributions">Key Contributions</a>
+        <a href="#structural-qr">Structural Quantum Resistance</a>
+        <a href="#status">Research Status</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="overview">
+      <h2>Overview</h2>
+      <p class="tagline">
+        This project explores a cryptosystem built directly on the geometry of
+        p-adic number fields, using Teichm?ller lifts and local truncation to
+        realize structural quantum resistance.
+      </p>
+      <p>
+        This work proposes a novel cryptographic framework that fundamentally
+        differs from conventional post-quantum cryptography. Instead of relying
+        on Euclidean linear structures?such as lattices or error-correcting
+        codes?this approach constructs a cryptosystem directly on the
+        non-Archimedean geometry of p-adic fields, using the Teichm?ller lift
+        and a locally-defined truncation operator as its central mathematical
+        components. The goal is to establish
+        <em>structural quantum resistance</em>: a form of quantum security
+        arising not from computational hardness assumptions, but from the
+        inherent geometric and algebraic properties of p-adic spaces.
+      </p>
+      <p>
+        The core idea is to exploit the stability of Teichm?ller fixed points.
+        For each \( a \in \mathbb{F}_p \), the Teichm?ller lift
+        \( \tau(a) \in \mathbb{Z}_p \) satisfies
+        \( \tau(a)^p = \tau(a) \), forming a discrete and self-stabilizing set
+        of fixed points within the p-adic integer ring. By mapping plaintext
+        symbols to these fixed points, the cryptosystem operates within a
+        digit-stable region of the p-adic space. This foundation is crucial for
+        constructing predictable local behavior while maintaining strong global
+        nonlinearity.
+      </p>
+      <p>
+        Building on this, we introduce the <em>local truncation map</em>
+        \( W_{r,L} : \mathbb{Z}_p \to \mathbb{F}_p^L \), which discards
+        higher-order digits in a fundamentally irreversible manner. Unlike
+        truncation in real-number systems, p-adic truncation does not
+        approximate a value but instead collapses the infinite digit expansion
+        along a tree-like p-adic hierarchy. This collapse acts as a one-way
+        transformation: many distant p-adic values map to the same truncated
+        output, while reconstructing the original point becomes exponentially
+        hard with respect to digit depth. This property serves as the primary
+        one-way primitive of the system.
+      </p>
+    </section>
+
+    <section id="key-contributions">
+      <h2>Key Contributions</h2>
+      <ul>
+        <li>
+          <strong>Teichm?ller-based key space:</strong> Cryptographic operations
+          are defined on Teichm?ller fixed points in \( \mathbb{Z}_p \),
+          ensuring digit stability and local self-consistency.
+        </li>
+        <li>
+          <strong>Local truncation as a one-way primitive:</strong> The map
+          \( W_{r,L} \) irreversibly collapses p-adic expansions along a
+          hierarchical tree, yielding an exponential barrier to inversion.
+        </li>
+        <li>
+          <strong>Non-linear block structure:</strong> The framework integrates
+          non-linear diffusion using fractional-linear (projective)
+          transformations over p-adic integers, enabling block-wise encryption
+          with high sensitivity to local digit variations.
+        </li>
+        <li>
+          <strong>Beyond lattice-based PQC:</strong> Unlike lattice or code
+          based cryptography, this approach does not rely on norm minimization,
+          error terms, or vector-space structures. It opens a Ågthird directionÅh
+          in post-quantum cryptography grounded in number-theoretic geometry.
+        </li>
+      </ul>
+    </section>
+
+    <section id="structural-qr">
+      <h2>Structural Quantum Resistance</h2>
+      <p>
+        A distinctive feature of this approach is that p-adic spaces do not
+        support quantum-style linear interference or superposition in any
+        natural computational sense. Non-Archimedean geometry enforces strong
+        local closure: small perturbations remain confined within
+        digit-stable regions, and linear combinations fail to extend globally
+        in the way required by quantum algorithms such as Shor or Grover.
+      </p>
+      <p>
+        Consequently, the cryptosystem gains a new form of quantum robustness
+        that does not primarily rely on computational hardness assumptions but
+        on the structural incompatibility between quantum linearity and p-adic
+        topology.
+      </p>
+      <ul>
+        <li>
+          <span class="pill">Non-Archimedean metric</span>
+          <span class="pill">Tree-like digit hierarchy</span>
+          <span class="pill">Local closure</span>
+          <span class="pill">Non-linear mixing</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="status">
+      <h2>Research Status &amp; Next Steps</h2>
+      <p>
+        The current version of this work has been submitted to
+        <strong>SCIS2026 (Symposium on Cryptography and Information
+        Security)</strong>. Future plans include:
+      </p>
+      <ul>
+        <li>
+          Releasing an English-language preprint detailing the algebraic
+          properties of the local truncation operator and the full block
+          cipher construction.
+        </li>
+        <li>
+          Refining the security model and developing formal arguments for
+          structural quantum resistance.
+        </li>
+        <li>
+          Exploring collaborations with researchers in number theory,
+          cryptography, and quantum computation, as well as industrial partners
+          interested in post-quantum-ready infrastructure.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Mikio Suzuki</strong><br />
+        p-adic Cryptography Project / Teichm?ller-based Cryptography<br />
+        Japan
+      </p>
+      <p>
+        Email: <code>evantec.crypto@example.com</code> (replace with actual address)<br />
+        LinkedIn: (add your LinkedIn profile URL here)<br />
+        Note (Japanese overview): (add your note.com article URL here)
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    ? <span id="year"></span> Mikio Suzuki ? Teichm?ller-based p-adic Cryptography
+    Project
+  </footer>
+
+  <script>
+    // Simple year updater
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</htmi>
